@@ -1,0 +1,8 @@
+{
+  "name": "VOIDMC — Minecraft Network & Store",
+  "description": "Official web portal for VOIDMC Minecraft Network (play.voidmc.fun:25674). Live player stats, real-time leaderboard, interactive Spin the Void wheel, automated billing with UPI QR code, and admin moderation dashboard.",
+  "requestFramePermissions": [],
+  "majorCapabilities": [
+    "MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"
+  ]
+}
