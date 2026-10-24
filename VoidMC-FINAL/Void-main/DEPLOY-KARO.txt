@@ -1,0 +1,52 @@
+VOIDMC - FINAL (24 October 2026, ~midnight)
+===========================================
+
+IS VERSION ME KYA NAYA HUA:
+  - Right-click (context) menu se "Admin Console (/voidogsite) [STAFF]" option HATA
+    DIYA hai. Ab players ko sirf ye 7 options dikhte hain: Copy Server IP,
+    Season 6 Showcase, Open VOID Store, Spin the Void Wheel, Hall of Fame,
+    Server Status & Node, Join Discord.
+  - Aapka admin panel phle se hi direct URL se khulta hai:
+    https://void-main.routsantosh650-dotcom.workers.dev/voidogsite
+    (bas ab website par kahin bhi wo link/option publicly nahi dikhega)
+
+CLOUDFLARE BUILD FAIL KYUN HUA THA (prev log):
+  Build (npm run build) PASS hua tha. Fail sirf "npx wrangler deploy" me hua,
+  kyun ki repo me koi wrangler config file nahi thi. Isliye wrangler ne khud ka
+  "Detected Project Settings" wizard chalaya, jo project me `npm install --save-dev
+  wrangler @cloudflare/vite-plugin` karna chahta tha. Aur package.json me
+  esbuild@^0.25 pinned hai jabki vite@8.3.5 ko esbuild@^0.27 chahiye -> npm ERESOLVE.
+
+  FIX (is zip me 2 nayi files; package.json jaan-boojh ke nahi chhua, warna Cloudflare
+  ka `bun install --frozen-lockfile` toot jaata):
+    1) wrangler.jsonc -> worker name "void-main" + deploy folder "dist", isse wizard
+       aur npm install step skip ho jata hai.
+    2) .npmrc         -> legacy-peer-deps=true (safety net, kisi bhi npm install ke liye).
+
+UPLOAD KARNE KA TARIKA:
+  GitHub -> routsantosh650-dotcom/Void-main -> VoidMC_Fixed -> Void-main ->
+  "Add file" -> "Upload files" -> is zip ke andar wala pura "Void-main" folder
+  drag & drop karo -> "Commit changes".
+  Commit ke baad Cloudflare apne aap rebuild karega - is baar deploy pass hona chahiye.
+  (.npmrc hidden file hai; upload list me dikhe to theek, na dikhe to bhi chalega
+  kyun ki wrangler.jsonc hi main fix hai.)
+
+DEPLOY AB KAISE KAAM KAREGA:
+  Cloudflare repo se source uthata hai, `npm run build` chalata hai, `dist` publish
+  karta hai. Root ka 9 MB index.html sirf manual/AI Studio backup ke liye hai.
+
+BAAKI FEATURES (pehle verified):
+  - About page: "TEAM BEHIND THE VOID" (Owner Ansh Raj, Co-Owner Meraj Mustafa,
+    Supervisor Santosh Rout, Manager Ayeshaa) aapki 4 photos ke saath.
+  - Purana khali "Who We Are" section removed; story section me 2 sahi images.
+  - Audit logs me sirf real actions + staff name + time.
+  - Store & Discounts: ON/OFF switch (ON = banner + crossed-out deal price, OFF = sab gayab).
+  - Products: price, deal price (INR -> USD auto), Most Popular toggle, add/delete.
+  - Showcase Photos: upload (auto compress), caption edit, delete.
+  - Platform Links: Discord/YouTube/Instagram/Store/WhatsApp bina code badle update.
+  Sab Firestore me permanent save hota hai. Test values original par: VOID = ₹359,
+  koi fake deal price nahi, discounts OFF, real Discord link.
+
+ZIP ME KYA NAHI HAI:
+  node_modules, dist (build se apne aap bante hain) aur src/assets/images
+  (9 MB purani unused images; site ki saari images public/assets me hain).
