@@ -2,6 +2,7 @@ import React from 'react';
 import { Users, Lightbulb, Sparkles, ArrowDownRight, ShieldCheck, Crown, UserCheck } from 'lucide-react';
 import { Language } from '../types/index.ts';
 import { TRANSLATIONS } from '../data/translations.ts';
+import orbitalCannonImage from '../assets/images/void_orbital_cannon_1792693303731.jpg';
 
 interface AboutSectionProps {
   language?: Language;
@@ -99,7 +100,7 @@ export const AboutSection: React.FC<AboutSectionProps> = ({ language = 'en', onE
 
             <div className="relative rounded-2xl overflow-hidden border border-purple-800/50 shadow-2xl">
               <img
-                src="/src/assets/images/void_orbital_cannon_1792693303731.jpg"
+                src={orbitalCannonImage}
                 alt="VOIDMC Arena & Orbital Cannon"
                 className="w-full h-80 object-cover"
                 referrerPolicy="no-referrer"
