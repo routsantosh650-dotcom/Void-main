@@ -1,5 +1,5 @@
 import React from 'react';
-import { Users, Lightbulb, Sparkles, ArrowDownRight, ShieldCheck, Crown, UserCheck } from 'lucide-react';
+import { Users, Sparkles } from 'lucide-react';
 import { Language } from '../types/index.ts';
 import { TRANSLATIONS } from '../data/translations.ts';
 import orbitalCannonImage from '../assets/images/void_orbital_cannon_1792693303731.jpg';
@@ -113,90 +113,7 @@ export const AboutSection: React.FC<AboutSectionProps> = ({ language = 'en', onE
           </div>
         </section>
 
-        {/* 02 — WHAT DEFINES US */}
-        <section className="mb-24">
-          <div className="text-center mb-12">
-            <span className="text-xs font-mono uppercase tracking-[0.2em] text-purple-400 font-bold">
-              {t.definesHeader}
-            </span>
-            <h2 className="text-3xl sm:text-4xl font-black text-white mt-1 font-heading">
-              {t.definesTitle}
-            </h2>
-            <p className="text-sm text-slate-400 mt-2">
-              {t.definesSub}
-            </p>
-          </div>
-
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
-            {/* Principle 01 - Community */}
-            <div className="bg-[#110A1F] border border-purple-900/40 rounded-2xl p-7 flex flex-col justify-between hover:border-purple-600/50 transition-all shadow-lg hover:shadow-[0_0_25px_rgba(168,85,247,0.2)]">
-              <div>
-                <div className="flex items-center justify-between text-purple-400 font-mono text-xs mb-4">
-                  <span>01 ◈ 01</span>
-                  <span className="px-2 py-0.5 rounded bg-purple-950 border border-purple-700/40 text-[10px] font-bold text-purple-300">
-                    {t.p1Badge}
-                  </span>
-                </div>
-                <h3 className="text-2xl font-black text-white font-heading mb-3">
-                  {t.p1Title}
-                </h3>
-                <p className="text-xs sm:text-sm text-slate-300 leading-relaxed">
-                  {t.p1Desc}
-                </p>
-              </div>
-              <div className="mt-6 pt-4 border-t border-purple-900/30 flex items-center gap-2 text-xs text-purple-300 font-semibold">
-                <Users className="w-4 h-4 text-purple-400" />
-                <span>Weekly Events For Everyone</span>
-              </div>
-            </div>
-
-            {/* Principle 02 - Innovation */}
-            <div className="bg-[#110A1F] border border-purple-900/40 rounded-2xl p-7 flex flex-col justify-between hover:border-purple-600/50 transition-all shadow-lg hover:shadow-[0_0_25px_rgba(168,85,247,0.2)]">
-              <div>
-                <div className="flex items-center justify-between text-purple-400 font-mono text-xs mb-4">
-                  <span>02 ◇ 02</span>
-                  <span className="px-2 py-0.5 rounded bg-purple-950 border border-purple-700/40 text-[10px] font-bold text-violet-300">
-                    {t.p2Badge}
-                  </span>
-                </div>
-                <h3 className="text-2xl font-black text-white font-heading mb-3">
-                  {t.p2Title}
-                </h3>
-                <p className="text-xs sm:text-sm text-slate-300 leading-relaxed">
-                  {t.p2Desc}
-                </p>
-              </div>
-              <div className="mt-6 pt-4 border-t border-purple-900/30 flex items-center gap-2 text-xs text-purple-300 font-semibold">
-                <Lightbulb className="w-4 h-4 text-purple-400" />
-                <span>Orbital Strike & Custom Ranks</span>
-              </div>
-            </div>
-
-            {/* Principle 03 - Quality */}
-            <div className="bg-[#110A1F] border border-purple-900/40 rounded-2xl p-7 flex flex-col justify-between hover:border-purple-600/50 transition-all shadow-lg hover:shadow-[0_0_25px_rgba(168,85,247,0.2)]">
-              <div>
-                <div className="flex items-center justify-between text-purple-400 font-mono text-xs mb-4">
-                  <span>03 ⬡ 03</span>
-                  <span className="px-2 py-0.5 rounded bg-purple-950 border border-purple-700/40 text-[10px] font-bold text-pink-300">
-                    {t.p3Badge}
-                  </span>
-                </div>
-                <h3 className="text-2xl font-black text-white font-heading mb-3">
-                  {t.p3Title}
-                </h3>
-                <p className="text-xs sm:text-sm text-slate-300 leading-relaxed">
-                  {t.p3Desc}
-                </p>
-              </div>
-              <div className="mt-6 pt-4 border-t border-purple-900/30 flex items-center gap-2 text-xs text-purple-300 font-semibold">
-                <Sparkles className="w-4 h-4 text-purple-400" />
-                <span>50+GB Node • Zero Lag Performance</span>
-              </div>
-            </div>
-          </div>
-        </section>
-
-        {/* 03 — THE TEAM (Exact members specified) */}
+        {/* 02 — THE TEAM */}
         <section className="mb-24">
           <div className="text-center mb-12">
             <span className="text-xs font-mono uppercase tracking-[0.2em] text-purple-400 font-bold">
@@ -254,7 +171,7 @@ export const AboutSection: React.FC<AboutSectionProps> = ({ language = 'en', onE
           </div>
         </section>
 
-        {/* READY TO ENTER THE VOID? (Exact text from prompt) */}
+        {/* READY TO ENTER THE VOID? */}
         <section className="relative rounded-3xl overflow-hidden bg-gradient-to-r from-purple-950 via-[#190E2E] to-purple-950 border border-purple-600/50 p-8 sm:p-14 text-center shadow-[0_0_50px_rgba(168,85,247,0.3)]">
           <span className="text-xs font-mono uppercase tracking-[0.25em] text-purple-300 font-bold">
             {t.journeyStart}
